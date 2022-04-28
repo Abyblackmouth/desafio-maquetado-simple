@@ -1,0 +1,370 @@
+$primary: #000000;
+$secondary:#ffba60;
+$bg-white: #ffffff;
+$gray-text:#868686;
+$hover: rgba(0,0,0,0.75);
+$tittle-font: 'Abril Fatface', cursive;
+$body-text: 'Raleway', sans-serif;
+
+
+@mixin card-position {
+    position: relative;
+    width: 320px;
+    height: 350px;
+  
+}
+
+@mixin box-properties {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+@mixin black-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: .5rem;
+    background-color: $primary;
+    border: none;
+    
+}
+
+@mixin h1-properties {
+    font-family: $tittle-font; 
+    font-weight: bold;
+    font-size: 32px;   
+}
+
+@mixin h3-properties {
+    font-family: $body-text;
+    color: $gray-text;
+    font-size: 16px;
+    
+}
+
+@mixin generic-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: .5rem;
+    width: 125px ;
+    height: 32px;
+    margin: 1rem;
+    border-style: hidden;
+}
+
+
+@mixin list-piano-characteristics {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 1rem;
+    font-family: $body-text;
+    font-weight: bold;
+}
+
+@mixin form-characteristics {    
+    color: white;
+    width: 288px;
+    height: 36px;
+    left: 15.55px;
+    top: 3036px;
+    background: rgba(0, 0, 0, 0.65);
+    border: 1px solid #fff;
+    box-sizing: border-box;
+    border-radius: 4px;
+    margin: .5rem 1rem .5rem 1rem;
+}
+
+@mixin icon-base {
+    width: 288px;
+    height: 103px;
+    background: #000000;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: $body-text;
+    font-size: 32px;
+    }
+    @mixin icon-logo-base {
+    width: 88.98px;
+    height: 88.98px;
+    left: 22.67px;
+    top: 4008.12px;
+    background: rgba(255, 255, 255, 0.5);
+    border: 0.889758px solid #FFFFFF;
+    border-radius: 100%;
+
+    }
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+.wrapper{
+    width: 320px;
+    height: 100%;
+    background: linear-gradient(180deg, rgba(245, 245, 245, 0) 0%, #F5F5F5 51.56%, rgba(245, 245, 245, 0) 100%);
+
+}
+
+.pazioli__bar{
+    display:flex;
+    justify-content: space-between;
+    align-items:center;
+    margin: 1rem;
+
+    &__logo img{
+        height: 21px;
+        width: 22px;
+    }
+}
+
+.main-container{
+    @include box-properties();
+
+    &__subtittle{
+        @include h3-properties();
+        margin: .5rem;
+    }
+
+    &__tittle{
+        @include h1-properties();
+        margin: .5rem;
+    }
+
+    &__button-box{
+        display: inline-flex
+    }
+    &__generic-btn{
+    @include generic-button()
+    }
+
+    &__btn-courses{
+        border: 1px solid $primary;
+        background-color: $primary;
+        color: $bg-white;
+    }
+    &__adquire{
+        border: 1px solid $primary;
+        background-color: $bg-white;
+    }
+
+}
+
+.news-container{
+    background: linear-gradient(180deg, #FFFFFF 0%, rgba(0, 0, 0, 0.75) 37.19%, rgba(0, 0, 0, 0.75) 76.04%, #FFFFFF 100%);
+    @include box-properties();
+
+    &__hands-piano {
+        opacity: 0.1;
+        position: absolute;
+    }
+
+    &__tittle{
+        text-align: center;
+        font-weight: bold;
+        margin: 1rem 1rem 0 1rem;
+    }
+
+    &__rating{
+        text-align: center;
+        margin: 1rem;
+    }
+
+    &__white-letters{
+        color:$bg-white
+    }
+
+    &__description{
+        margin: 1rem;
+        text-align: center;
+        color: $bg-white;
+        font-family: $body-text;
+        font-size: 16px;
+    }
+    
+
+.nav-container{
+
+    &__list{
+        color: $bg-white;
+        @include list-piano-characteristics();
+    }
+
+    &__btn-box{
+        @include box-properties();
+    }
+
+    &__btn-add{
+        @include generic-button();
+        background-color: $primary;
+        border: 1px solid $primary;
+        color: $bg-white;
+        width: 80%;
+    }
+
+}
+
+}
+
+.inventory{
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+
+    &__tittle{
+        text-align: center;
+        margin-top: 2rem;
+        font-family: $tittle-font
+    }
+
+    &__card-properties{
+        @include card-position();
+        @include box-properties();
+    }
+
+    &__price{
+        display: inline-flex;
+    
+    }
+
+    &__list{
+        @include list-piano-characteristics();
+        width: 320px;
+        font-weight: normal;
+    }
+
+    &__price p {
+        border: 1px solid  $primary; 
+        width: 10rem;
+        margin: 0 2rem 0 2rem;
+        padding: .5rem;
+        border-radius: .5rem;
+    }
+
+    &__price button{
+        height: 2rem;
+        width: 2rem;
+        align-items: center;
+        @include black-button();
+    }
+
+    &__btn-box{
+        display: flex;
+        justify-content: center;
+    }
+
+    &__button-show{
+        @include generic-button();
+        background-color: $primary;
+        color: $bg-white;
+
+    }
+}
+
+.contact{
+    @include box-properties();
+    text-align: center;
+    font-family: $body-text;
+
+    &__form-wrapper{
+
+        &__form{
+            @include form-characteristics();
+        }
+
+        &__form2{
+            @include form-characteristics();
+            height: 148px;
+        }
+    }
+    h5{
+        text-align: left;
+        margin: .5rem 1rem .5rem 1rem;
+        font-family: $body-text;
+
+    }
+
+    button{
+        @include generic-button();
+        width: 80%;
+        background-color: $primary;
+    }
+}
+
+.partners-wrapper{
+
+    display: flex;
+    flex-direction: column;
+    &__flags{
+        margin: .5rem;
+        
+        &__left{
+            @include icon-base();
+            border-radius: 88.9758px 14.2361px 14.2361px 88.9758px;
+
+            
+            img{
+                @include icon-logo-base();
+                margin-top: 6px;
+                margin-left: 6px;
+                padding: .5rem;
+            }
+        }
+
+        &__right{
+
+            @include icon-base();
+            border-radius: 14.2361px 88.9758px 88.9758px 14.2361px;
+
+
+            img{
+                margin-right: 6px;
+                padding: .5rem;
+                @include icon-logo-base();
+            }
+        }
+    }
+}
+
+
+.footer-container{
+    @include box-properties();
+    background: linear-gradient(177.96deg, rgba(255, 255, 255, 0.43) 1.72%, #6F6F6F 107.44%);
+
+    h6{
+        font-family: $tittle-font;
+        font-size: 14px;
+        margin: 1rem;
+    }
+
+    &__social-network{
+        @include box-properties();
+
+        &__icon img{
+            width: 25px;
+            height: 25px;
+            margin: 1rem;
+        }
+    }
+
+    &__contacts{
+        @include box-properties();
+        text-align: center;
+    }
+    &__list{
+        list-style: none;
+    }
+
+    &__copyright{
+        margin: 2rem 1rem 2rem 1rem;
+    }
+        
+    }

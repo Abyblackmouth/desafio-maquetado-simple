@@ -1,0 +1,115 @@
+body {
+    background: lightcyan
+}
+
+.contact {
+    
+    width: 320px;
+    height: 870px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    &__tittle {
+        
+        font-size: 32px;
+        font-weight: bold;
+    }
+
+
+    @mixin form-base {
+        
+        color: white;
+        width: 288px;
+        height: 36px;
+        left: 15.55px;
+        top: 3036px;
+        background: rgba(0, 0, 0, 0.65);
+        border: 1px solid #fff;
+        box-sizing: border-box;
+        border-radius: 4px;
+    }
+
+    &__form-wrapper {
+        &__form1 {
+            @include form-base();
+        }
+        &__form2 {
+            @include form-base();
+        }
+        &__form3 {
+            @include form-base();
+        }
+        &__form4 {
+            @include form-base();
+            height: 148px;
+        }
+    }
+
+    &__btn {
+        @include form-base(); 
+        height: 32px;
+        top: 3520px;
+        background: black;
+    }
+}
+
+
+
+
+
+
+.partners-wrapper {
+    
+    text-align: center;
+    width: 320px;
+    height: 548px;
+    left: 0px;
+    top: 3612px;
+
+    &__tittle { 
+        font-size: 24px;
+        font-weight: bold;
+    }
+    @mixin icon-base {
+    width: 288px;
+    height: 103px;
+    left: 15.55px;
+    top: 3730px;
+    background: #000000;
+    color: white
+    }
+    @mixin icon-logo-base {
+    width: 88.98px;
+    height: 88.98px;
+    left: 22.67px;
+    top: 4008.12px;
+    background: rgba(255, 255, 255, 0.5);
+    border: 0.889758px solid #FFFFFF;
+    border-radius: 100%;
+        
+    }
+    &__icon1 {
+        @include icon-base();
+        border-radius: 88.9758px 14.2361px 14.2361px 88.9758px;
+        &__logo{
+            @include icon-logo-base();
+        }
+    }
+    &__icon2 {
+        @include icon-base(); 
+        border-radius: 14.2361px 88.9758px 88.9758px 14.2361px;
+        &__logo{
+            @include icon-logo-base();
+            left: 206.78px;
+        }
+    }
+    &__icon3 {
+        @include icon-base();
+        border-radius: 88.9758px 14.2361px 14.2361px 88.9758px;
+        &__logo{
+            @include icon-logo-base();
+        }
+    }
+}
